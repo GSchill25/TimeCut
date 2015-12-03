@@ -17,6 +17,6 @@ extension Timings {
     @NSManaged var startTime: String?
     @NSManaged var endTime: String?
     @NSManaged var activity: String?
-    @NSManaged var date: NSDate?
+    @NSManaged var date: String?
 
 }

@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7240A7111C1028C8008E7C4B /* TimeCut 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TimeCut 2.xcdatamodel"; sourceTree = "<group>"; };
 		728167201C1012F400008B90 /* TimeCut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728167231C1012F400008B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		728167251C1012F400008B90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -404,6 +405,7 @@
 				728167421C1012F400008B90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		728167431C1012F400008B90 /* Build configuration list for PBXNativeTarget "TimeCutTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +414,7 @@
 				728167451C1012F400008B90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -419,9 +422,10 @@
 		7281672A1C1012F400008B90 /* TimeCut.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				7240A7111C1028C8008E7C4B /* TimeCut 2.xcdatamodel */,
 				7281672B1C1012F400008B90 /* TimeCut.xcdatamodel */,
 			);
-			currentVersion = 7281672B1C1012F400008B90 /* TimeCut.xcdatamodel */;
+			currentVersion = 7240A7111C1028C8008E7C4B /* TimeCut 2.xcdatamodel */;
 			path = TimeCut.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
