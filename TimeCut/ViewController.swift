@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     let stopwatch = Stopwatch()
 
-    @IBOutlet weak var activity: UITextField!
     @IBOutlet weak var timerLabel: UILabel!
     
     override func viewDidLoad() {
@@ -34,7 +33,6 @@ class ViewController: UIViewController {
         
         let timing = Timings(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext)
         
-        timing.activity = activity.text
         timing.date = todaysDate()
         
         do {
