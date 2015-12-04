@@ -115,7 +115,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Time" id="utY-DW-AzN">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Nqn-Tv-2Xf"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Nqn-Tv-2Xf">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="wFG-zj-09t"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="timerLabel" destination="un1-6h-XBO" id="4UJ-5A-PDl"/>
@@ -181,7 +185,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QoF-yy-aYp">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="LyD-gl-CV9"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="LyD-gl-CV9">
+                            <connections>
+                                <action selector="cancel:" destination="Nyh-jY-UI9" id="0dQ-D6-wnx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="BRa-AZ-Y23">
                             <connections>
                                 <segue destination="Tci-Gh-QQz" kind="unwind" unwindAction="unwindToActivityList:" id="tai-lv-ooo"/>

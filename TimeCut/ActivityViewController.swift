@@ -16,6 +16,10 @@ class ActivityViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var activityName: UITextField!
     
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,13 +34,13 @@ class ActivityViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         // Disable the Save button while editing.
-        saveActivity.enabled = false
+        //saveActivity.enabled = false
     }
     
     func checkValidActivityName() {
         // Disable the Save button if the text field is empty.
         let text = activityName.text ?? ""
-        saveActivity.enabled = !text.isEmpty
+        //saveActivity.enabled = !text.isEmpty
     }
     
     func textFieldDidEndEditing(textField: UITextField) {

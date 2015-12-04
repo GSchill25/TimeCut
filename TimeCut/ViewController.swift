@@ -16,6 +16,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
     
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
