@@ -11,6 +11,7 @@ import UIKit
 class ActivityViewController: UIViewController, UITextFieldDelegate {
     
     var activity: Activity?
+    let dataManager = DataManager()
 
     @IBOutlet weak var saveActivity: UIBarButtonItem!
     

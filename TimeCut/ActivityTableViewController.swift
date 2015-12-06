@@ -15,7 +15,12 @@ class ActivityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleActivities()
+        if let savedActivities = loadActivities() {
+            activities += savedActivities
+        }
+        if activities.isEmpty{
+            loadSampleActivities()
+        }
     }
     
     func loadSampleActivities() {
@@ -46,12 +51,23 @@ class ActivityTableViewController: UITableViewController {
         let cellIdentifier = "ActivityTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ActivityTableViewCell
         
-        // Fetches the appropriate meal for the data source layout.
+        // Fetches the appropriate activity for the data source layout.
         let activity = activities[indexPath.row]
         
         cell.nameLabel.text = activity.name
         
         return cell
+    }
+    
+    func saveActivities() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(activities, toFile: Activity.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save activities...")
+        }
+    }
+    
+    func loadActivities() -> [Activity]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Activity.ArchiveURL.path!) as? [Activity]
     }
     
     @IBAction func unwindToActivityList(sender: UIStoryboardSegue) {
@@ -60,6 +76,7 @@ class ActivityTableViewController: UITableViewController {
             activities.append(activity)
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
         }
+        saveActivities()
     }
 
     // MARK: - Navigation

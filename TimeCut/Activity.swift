@@ -8,10 +8,26 @@
 
 import Foundation
 
-class Activity {
+class Activity: NSObject, NSCoding {
+    
+    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("activities")
+    
     let name: String
     
     init(name: String){
         self.name = name
     }
+    
+    // MARK: NSCoding
+ 
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(name, forKey: "Name")
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let name = aDecoder.decodeObjectForKey("Name") as! String
+        self.init(name: name)
+    }
+
 }
