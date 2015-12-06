@@ -13,8 +13,11 @@ class ViewController: UIViewController {
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     let stopwatch = Stopwatch()
+    
+    var activity: Activity?
 
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var activityName: UILabel!
     
     @IBAction func cancel(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -22,6 +25,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let activitySelected = activity{
+            activityName.text = activitySelected.name
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -38,6 +44,8 @@ class ViewController: UIViewController {
         let timing = Timings(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext)
         
         timing.date = todaysDate()
+        timing.activity = activityName.text
+        timing.endTime = timerLabel.text
         
         do {
           try managedObjectContext.save()
