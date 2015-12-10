@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="-461" y="51"/>
         </scene>
-        <!--View Controller-->
+        <!--Time Graph View Controller-->
         <scene sceneID="6wM-fG-d6Y">
             <objects>
-                <viewController id="Qgr-fl-2L7" sceneMemberID="viewController">
+                <viewController id="Qgr-fl-2L7" customClass="TimeGraphViewController" customModule="TimeCut" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hny-qb-2FS"/>
                         <viewControllerLayoutGuide type="bottom" id="qtE-YQ-aXk"/>
@@ -181,9 +181,18 @@
                     <view key="view" contentMode="scaleToFill" id="0vE-WX-hUJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O7j-fK-fA0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="ndz-xp-5uF"/>
+                    <connections>
+                        <outlet property="webView" destination="O7j-fK-fA0" id="aCa-Bz-3BF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nc4-Zw-mIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
