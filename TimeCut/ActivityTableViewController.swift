@@ -46,7 +46,11 @@ class ActivityTableViewController: UITableViewController {
             }
         }
         averageTime /= count
-        return NSString(format: "%.2f", averageTime) as String
+        if averageTime < 60 {
+            return String(round(averageTime)) + " seconds"
+        } else {
+            return String(round(averageTime/60)) + " minutes"
+        }
     }
     
     var activities = [Activity]()
@@ -94,14 +98,16 @@ class ActivityTableViewController: UITableViewController {
         // Fetches the appropriate activity for the data source layout.
         let activity = activities[indexPath.row]
         let avgTime = getTimingsForActivity(activity.name)
-        cell.nameLabel.text = activity.name + " Average Time: " + (avgTime as String)
+        if avgTime == "nan minutes"{
+            cell.nameLabel.text = activity.name + " - Avg Time: No Timings"
+        }else{
+            cell.nameLabel.text = activity.name + " - Average Time: " + (avgTime as String)
+        }
         
         return cell
     }
     
     func loadList(notification: NSNotification){
-            //load data here
-        print("Reloading data")
         self.tableView.reloadData()
     }
     

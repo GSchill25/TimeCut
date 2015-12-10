@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ypa-jx-k7o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PSf-hf-EMc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -23,6 +23,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejK-ij-4mi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1169" y="-315"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="XBt-Gp-o4k">
+            <objects>
+                <viewController id="PSf-hf-EMc" customClass="WelcomeViewController" customModule="TimeCut" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vRJ-Kc-vzY"/>
+                        <viewControllerLayoutGuide type="bottom" id="dhl-wK-n0K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eeD-EA-CKy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iphoneWallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="Bwc-Iq-8xN">
+                                <rect key="frame" x="0.0" y="0.0" width="821" height="1032"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To TimeCut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PG-YY-h3x">
+                                <rect key="frame" x="210" y="69" width="181" height="37"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-yv-9n9">
+                                <rect key="frame" x="153" y="139" width="296" height="234"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="296" id="QQ9-9l-A16"/>
+                                    <constraint firstAttribute="width" constant="296" id="T5a-QS-tGc"/>
+                                    <constraint firstAttribute="height" constant="234" id="YfP-HC-9qd"/>
+                                </constraints>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-EJ-scN">
+                                <rect key="frame" x="259" y="430" width="80" height="30"/>
+                                <state key="normal" title="Get Started"/>
+                                <connections>
+                                    <segue destination="Ypa-jx-k7o" kind="showDetail" id="h6p-AR-CUg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dZK-EJ-scN" firstAttribute="centerX" secondItem="eeD-EA-CKy" secondAttribute="centerX" constant="-1" id="3nb-H0-9bk"/>
+                            <constraint firstItem="0PG-YY-h3x" firstAttribute="top" secondItem="vRJ-Kc-vzY" secondAttribute="bottom" constant="49" id="54n-oF-CHt"/>
+                            <constraint firstItem="dZK-EJ-scN" firstAttribute="top" secondItem="sJ5-yv-9n9" secondAttribute="bottom" constant="57" id="bUB-rN-5Ou"/>
+                            <constraint firstItem="sJ5-yv-9n9" firstAttribute="centerX" secondItem="eeD-EA-CKy" secondAttribute="centerX" constant="1" id="exX-Qz-xyr"/>
+                            <constraint firstItem="dhl-wK-n0K" firstAttribute="top" secondItem="dZK-EJ-scN" secondAttribute="bottom" constant="140" id="iWd-oG-rAS"/>
+                            <constraint firstItem="0PG-YY-h3x" firstAttribute="centerX" secondItem="eeD-EA-CKy" secondAttribute="centerX" id="wxJ-TD-HEl"/>
+                            <constraint firstItem="sJ5-yv-9n9" firstAttribute="top" secondItem="0PG-YY-h3x" secondAttribute="bottom" constant="33" id="yUQ-MZ-Zco"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeWebView" destination="sJ5-yv-9n9" id="tJG-od-QHf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Asb-GQ-Q6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1927" y="-199"/>
         </scene>
         <!--Activities-->
         <scene sceneID="ydF-Ki-yHe">
@@ -291,6 +348,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityName" destination="zoe-xk-KSG" id="ZmH-BG-7MA"/>
+                        <outlet property="readyButton" destination="ryy-I1-oHD" id="9Tl-UA-QUH"/>
+                        <outlet property="startButton" destination="JEd-Kf-Mpf" id="iNy-mx-LzB"/>
                         <outlet property="timerLabel" destination="un1-6h-XBO" id="4UJ-5A-PDl"/>
                     </connections>
                 </viewController>
@@ -328,12 +387,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O7j-fK-fA0">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O7j-fK-fA0">
+                                <rect key="frame" x="12" y="9" width="568" height="542"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O7j-fK-fA0" firstAttribute="top" secondItem="Hny-qb-2FS" secondAttribute="bottom" constant="-11" id="Aly-c0-9zL"/>
+                            <constraint firstItem="O7j-fK-fA0" firstAttribute="centerX" secondItem="0vE-WX-hUJ" secondAttribute="centerX" id="Ux0-oZ-bQN"/>
+                            <constraint firstItem="O7j-fK-fA0" firstAttribute="trailing" secondItem="0vE-WX-hUJ" secondAttribute="trailingMargin" constant="8" id="Vjt-cZ-GI9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="ndz-xp-5uF"/>
                     <connections>

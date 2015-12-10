@@ -24,6 +24,8 @@
 		7281674B1C10216300008B90 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281674A1C10216300008B90 /* StopWatch.swift */; };
 		72E69DBB1C19DEB300055E7C /* TimeGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E69DBA1C19DEB300055E7C /* TimeGraphViewController.swift */; };
 		72E69DBD1C19DFCF00055E7C /* graph.html in Resources */ = {isa = PBXBuildFile; fileRef = 72E69DBC1C19DFCF00055E7C /* graph.html */; };
+		72E69DBF1C1A2FEB00055E7C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E69DBE1C1A2FEB00055E7C /* WelcomeViewController.swift */; };
+		72E69DC11C1A311500055E7C /* welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 72E69DC01C1A311500055E7C /* welcome.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		72E69DB91C193BD500055E7C /* TimeCut 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TimeCut 3.xcdatamodel"; sourceTree = "<group>"; };
 		72E69DBA1C19DEB300055E7C /* TimeGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeGraphViewController.swift; sourceTree = "<group>"; };
 		72E69DBC1C19DFCF00055E7C /* graph.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = graph.html; sourceTree = "<group>"; };
+		72E69DBE1C1A2FEB00055E7C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		72E69DC01C1A311500055E7C /* welcome.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = welcome.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				7240A71C1C13B72B008E7C4B /* DataManager.swift */,
 				72E69DBA1C19DEB300055E7C /* TimeGraphViewController.swift */,
 				72E69DBC1C19DFCF00055E7C /* graph.html */,
+				72E69DBE1C1A2FEB00055E7C /* WelcomeViewController.swift */,
+				72E69DC01C1A311500055E7C /* welcome.html */,
 			);
 			path = TimeCut;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 				728167311C1012F400008B90 /* LaunchScreen.storyboard in Resources */,
 				7281672E1C1012F400008B90 /* Assets.xcassets in Resources */,
 				728167291C1012F400008B90 /* Main.storyboard in Resources */,
+				72E69DC11C1A311500055E7C /* welcome.html in Resources */,
 				72E69DBD1C19DFCF00055E7C /* graph.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +246,7 @@
 				7281672C1C1012F400008B90 /* TimeCut.xcdatamodeld in Sources */,
 				7240A71B1C110B17008E7C4B /* ActivityViewController.swift in Sources */,
 				728167261C1012F400008B90 /* ViewController.swift in Sources */,
+				72E69DBF1C1A2FEB00055E7C /* WelcomeViewController.swift in Sources */,
 				7281674B1C10216300008B90 /* StopWatch.swift in Sources */,
 				7240A7171C10B3C9008E7C4B /* ActivityTableViewController.swift in Sources */,
 				728167481C10148000008B90 /* Timings+CoreDataProperties.swift in Sources */,

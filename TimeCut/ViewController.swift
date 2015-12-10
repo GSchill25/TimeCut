@@ -18,6 +18,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var activityName: UILabel!
+    @IBOutlet weak var readyButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
     
     @IBAction func cancel(sender: UIBarButtonItem) {
          NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
         if let activitySelected = activity{
             activityName.text = activitySelected.name
         }
+        readyButton.enabled = false
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -36,6 +39,8 @@ class ViewController: UIViewController {
         print("Started Timer")
         NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateElapsedTimeLabel:", userInfo: nil, repeats: true)
         stopwatch.start()
+        readyButton.enabled = true
+        startButton.enabled = false
     }
     
     @IBAction func endPressed(sender: AnyObject) {

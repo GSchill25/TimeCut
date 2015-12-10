@@ -69,17 +69,22 @@ class TimeGraphViewController: UIViewController {
         }
         for timing in timings{
             if timing.activity! as NSString == activity{
-            count += 1.0
-            let str = timing.endTime as NSString!
-            let minutesStr = str.substringWithRange(NSRange(location: 0, length: 2))
-            let secondsStr = str.substringWithRange(NSRange(location:3, length: 4))
-            var seconds = (secondsStr as NSString).floatValue
-            let minutes = (minutesStr as NSString).floatValue
-            seconds += minutes * 60
-            averageTime += seconds
+                count += 1.0
+                let str = timing.endTime as NSString!
+                let minutesStr = str.substringWithRange(NSRange(location: 0, length: 2))
+                let secondsStr = str.substringWithRange(NSRange(location:3, length: 4))
+                var seconds = (secondsStr as NSString).floatValue
+                let minutes = (minutesStr as NSString).floatValue
+                seconds += minutes * 60
+                averageTime += seconds
             }
         }
-        averageTime /= count
+        if count > 0{
+            averageTime /= count
+        }
+        else{
+            return 1.0
+        }
         return averageTime
     }
     
