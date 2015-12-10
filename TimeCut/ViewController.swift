@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var activityName: UILabel!
     
     @IBAction func cancel(sender: UIBarButtonItem) {
+         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

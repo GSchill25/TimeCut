@@ -7,9 +7,47 @@
 //
 
 import UIKit
+import CoreData
 
 class ActivityTableViewController: UITableViewController {
     // MARK: Properties
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    
+    func getTimingsForActivity(activity: String) -> String{
+        /*let fetchRequest = NSFetchRequest(entityName: "Timings")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedObjectContext.executeRequest(deleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }*/
+        
+        var timings = [Timings]()
+        var count = 0.0 as Float
+        var averageTime = 0.0 as Float
+        let fetchRequest = NSFetchRequest(entityName: "Timings")
+        do{
+            timings = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Timings]
+        } catch let error as NSError{
+            print("Could not retrieve coreData timings \(error)")
+        }
+        for timing in timings{
+            if timing.activity! as NSString == activity{
+                count += 1.0
+                let str = timing.endTime as NSString!
+                let minutesStr = str.substringWithRange(NSRange(location: 0, length: 2))
+                let secondsStr = str.substringWithRange(NSRange(location:3, length: 4))
+                var seconds = (secondsStr as NSString).floatValue
+                let minutes = (minutesStr as NSString).floatValue
+                seconds += minutes * 60
+                averageTime += seconds
+            }
+        }
+        averageTime /= count
+        return NSString(format: "%.2f", averageTime) as String
+    }
     
     var activities = [Activity]()
 
@@ -21,6 +59,7 @@ class ActivityTableViewController: UITableViewController {
         if activities.isEmpty{
             loadSampleActivities()
         }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name:"load", object: nil)
     }
     
     func loadSampleActivities() {
@@ -53,11 +92,18 @@ class ActivityTableViewController: UITableViewController {
         
         // Fetches the appropriate activity for the data source layout.
         let activity = activities[indexPath.row]
-        
-        cell.nameLabel.text = activity.name
+        let avgTime = getTimingsForActivity(activity.name)
+        cell.nameLabel.text = activity.name + " Average Time: " + (avgTime as String)
         
         return cell
     }
+    
+    func loadList(notification: NSNotification){
+            //load data here
+        print("Reloading data")
+        self.tableView.reloadData()
+    }
+    
     
     func saveActivities() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(activities, toFile: Activity.ArchiveURL.path!)

@@ -55,6 +55,7 @@
 		728167461C10148000008B90 /* Timings+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timings+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		728167471C10148000008B90 /* Timings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timings.swift; sourceTree = "<group>"; };
 		7281674A1C10216300008B90 /* StopWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
+		72E69DB91C193BD500055E7C /* TimeCut 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TimeCut 3.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,10 +443,11 @@
 		7281672A1C1012F400008B90 /* TimeCut.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				72E69DB91C193BD500055E7C /* TimeCut 3.xcdatamodel */,
 				7240A7111C1028C8008E7C4B /* TimeCut 2.xcdatamodel */,
 				7281672B1C1012F400008B90 /* TimeCut.xcdatamodel */,
 			);
-			currentVersion = 7240A7111C1028C8008E7C4B /* TimeCut 2.xcdatamodel */;
+			currentVersion = 72E69DB91C193BD500055E7C /* TimeCut 3.xcdatamodel */;
 			path = TimeCut.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

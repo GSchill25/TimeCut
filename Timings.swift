@@ -7,11 +7,10 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 
 class Timings: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
 
 }
