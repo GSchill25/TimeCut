@@ -68,6 +68,7 @@ class ActivityTableViewController: UITableViewController {
         let act3 = Activity(name: "Practice")
         
         activities += [act1, act2, act3]
+        saveActivities()
     }
 
     override func didReceiveMemoryWarning() {

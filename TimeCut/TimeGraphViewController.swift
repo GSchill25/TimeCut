@@ -34,8 +34,10 @@ class TimeGraphViewController: UIViewController {
             }
         }
         for (act, avgTime) in activityArray{
-            let color = getRandomColor()
-            dataStr += "{ value: \(avgTime), label: '\(act)', color: '\(color)'},"
+            var color = getRandomColor()
+            let highlight = color + ",0.5)"
+            color += ",0.9)"
+            dataStr += "{ value: \(avgTime), label: '\(act)', color: '\(color)', highlight: '\(highlight)'},"
         }
         dataStr.removeAtIndex(dataStr.endIndex.predecessor())
         dataStr += "]"
@@ -46,7 +48,7 @@ class TimeGraphViewController: UIViewController {
         let randomRed = arc4random_uniform(255)
         let randomGreen = arc4random_uniform(255)
         let randomBlue = arc4random_uniform(255)
-        let color = "rgba(\(randomRed),\(randomGreen),\(randomBlue),0.8)"
+        let color = "rgba(\(randomRed),\(randomGreen),\(randomBlue)"
         return color
     }
 
