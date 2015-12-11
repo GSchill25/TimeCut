@@ -15,15 +15,6 @@ class ActivityTableViewController: UITableViewController {
     
     
     func getTimingsForActivity(activity: String) -> String{
-        /*let fetchRequest = NSFetchRequest(entityName: "Timings")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        do {
-            try managedObjectContext.executeRequest(deleteRequest)
-        } catch let error as NSError {
-            print(error)
-        }*/
-        
         var timings = [Timings]()
         var count = 0.0 as Float
         var averageTime = 0.0 as Float
